@@ -7,7 +7,7 @@
 
 - Create the `libftprintf.a` library in your terminal with the command:
 ``` Makefile
-make all
+make
 ```
 - To compile and run the tests, use the following command:
 ``` Makefile
