@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/13 01:03:53 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/13 02:00:02 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ TEST = main.c
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 MAKEFLAGS += --no-print-directory
-DIR_INC = includes
-DIR_SRC = src
 DIR_LIB = libft
+DIR_INC = .
+DIR_SRC = src
 DIR_OBJ = obj
 
 SRCS = $(addprefix $(DIR_SRC)/, ft_printf.c ft_printf_utils.c)
@@ -31,15 +31,15 @@ $(LIB):
 	@make -C $(DIR_LIB)
 
 $(DIR_OBJ):
-	@mkdir $(DIR_OBJ)
+	@mkdir -p $(DIR_OBJ)
 
 $(NAME): $(LIB) $(DIR_OBJ) $(OBJS)
-	@mv $(LIB) $(NAME)
+	@cp $(LIB) $(NAME)
 	@ar -rcs $(NAME) $(OBJS)
 	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c
-	@$(CC) $(CFLAGS) -c $< -o $@ -I$(DIR_INC)
+	@$(CC) $(CFLAGS) -I$(DIR_INC) -c $< -o $@
 	@echo "\033[1;32m [+]\033[0m compiling $@"
 
 clean:
@@ -53,8 +53,8 @@ fclean: clean
 
 re: fclean all
 
-test:
-	@$(CC) -g $(CFLAGS) $(TEST) $(NAME) -I$(DIR_INC)
+test: $(NAME)
+	@$(CC) -g $(CFLAGS) $(TEST) $(NAME)
 	@echo ""
 	@valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes \
 	--track-origins=yes ./a.out

@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:08:49 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/13 00:23:51 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 02:02:19 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>			// va_list, va_start, va_arg, va_end
-# include "../libft/libft.h"
+# include "libft/libft.h"
 
 # define BASE_10 "0123456789"
 # define BASE_16 "0123456789ABCDEF"
