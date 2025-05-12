@@ -3,7 +3,7 @@
 > Simplified recreation of the variadic <stdio.h> `printf` function with the following data types as possible conversions: `c s p d i u x X %`.
 
 > [!TIP]
-> ## How to use 🚨
+> ## How to use
 
 - Create the `libftprintf.a` library in your terminal with the command:
 ``` Makefile
