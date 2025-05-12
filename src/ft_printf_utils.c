@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:24:42 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 19:38:10 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 00:35:12 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param len Number of characters in the base used.
  * @return Number of digits in an integer number.
  */
-static int	ft_countdigits(uintptr_t n, const size_t len)
+static inline int	ft_countdigits(uintptr_t n, const size_t len)
 {
 	unsigned int	count;
 
@@ -45,7 +45,7 @@ static int	ft_countdigits(uintptr_t n, const size_t len)
  * @param base Source string.
  * @return `1` if `base` is valid, `0` if not.
  */
-static int	ft_validatebase(const char *base)
+static inline int	ft_validatebase(const char *base)
 {
 	int	i;
 	int	j;

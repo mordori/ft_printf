@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 18:08:50 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 00:11:49 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static inline char	*ft_ptrformat(char *s)
  * @param args Variable type argument list.
  * @return String with formatted type conversion.
  */
-static inline char	*ft_strformat(char c, va_list *args)
+static inline char	*ft_strformat(const char c, va_list *args)
 {
 	char	*str;
 
@@ -75,7 +75,7 @@ static inline char	*ft_strformat(char c, va_list *args)
  * @param args Variable type argument list.
  * @return Number of bytes written or -1 on error.
  */
-static inline int	ft_strprint(char c, va_list *args)
+static inline int	ft_strprint(const char c, va_list *args)
 {
 	int		bytes;
 	char	*str;

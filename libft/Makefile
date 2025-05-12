@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:19:00 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/12 00:07:30 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/05/13 00:55:23 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = ../libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 MAKEFLAGS += --no-print-directory
-DIR_INC = ../includes/
 
 SRCS =	ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 		ft_bzero.c ft_isascii.c ft_memchr.c ft_memset.c ft_toupper.c \
@@ -34,11 +33,11 @@ OBJS = $(SRCS:.c=.o)
 all: lib $(NAME) clean
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 	@echo "\033[1;33m [✔] libft.a created \033[0m"
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@ -I$(DIR_INC)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@rm -rf $(OBJS)
