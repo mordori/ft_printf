@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 15:20:59 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:08:50 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return String of formatted pointer address in hex, beginning with `0x` or
  * `(nil)` if NULL pointer.
  */
-static char	*ft_ptrformat(char *s)
+static inline char	*ft_ptrformat(char *s)
 {
 	char	*str;
 
@@ -41,12 +41,12 @@ static char	*ft_ptrformat(char *s)
  * @param args Variable type argument list.
  * @return String with formatted type conversion.
  */
-static char	*ft_strformat(char c, va_list *args)
+static inline char	*ft_strformat(char c, va_list *args)
 {
 	char	*str;
 
 	if (c == '%')
-		str = ft_memset(ft_calloc(2, 1), c, 1);
+		str = ft_memset(ft_calloc(2, 1), '%', 1);
 	else if (c == 'c')
 		str = ft_memset(ft_calloc(2, 1), va_arg(*args, unsigned int), 1);
 	else if (c == 's')
@@ -75,7 +75,7 @@ static char	*ft_strformat(char c, va_list *args)
  * @param args Variable type argument list.
  * @return Number of bytes written or -1 on error.
  */
-static int	ft_strprint(char c, va_list *args)
+static inline int	ft_strprint(char c, va_list *args)
 {
 	int		bytes;
 	char	*str;
@@ -119,7 +119,10 @@ int	ft_printf(const char *s, ...)
 		else
 			bytes = ft_putchar_fd(*(s - 1), 1);
 		if (bytes == -1)
-			return (-1);
+		{
+			totalbytes = -1;
+			break ;
+		}
 		totalbytes += bytes;
 	}
 	va_end(args);

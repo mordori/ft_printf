@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 15:24:42 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 16:21:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 19:38:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,9 @@ static int	ft_countdigits(uintptr_t n, const size_t len)
 /**
  * Validates `base` with the following rules:
  *
- * - Begins with digits 0-9 in ascending order
+ * - String is not empty or NULL.
  *
- * - Has atleast 2 digits
- *
- * - A-Z in ascending order after the 10th digit.
+ * - Has no duplicate characters.
  *
  * @param base Source string.
  * @return `1` if `base` is valid, `0` if not.
@@ -55,16 +53,16 @@ static int	ft_validatebase(const char *base)
 	if (!base || !*base)
 		return (0);
 	i = 0;
-	while (i < 10 && base[i] == i + '0')
-		++i;
-	if (i < 2 || (base[i] && i < 10))
-		return (0);
-	j = 0;
-	while (base[i + j])
+	while (base[i])
 	{
-		if (base[i + j] != j + 'A')
-			return (0);
-		++j;
+		j = 0;
+		while (j < i)
+		{
+			if (base[j] == base[i])
+				return (0);
+			++j;
+		}
+		++i;
 	}
 	return (1);
 }

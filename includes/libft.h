@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 01:18:35 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/12 18:02:05 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-int		ft_putchar_fd(char c, int fd);
-int		ft_putendl_fd(char *s, int fd);
-int		ft_putstr_fd(char *s, int fd);
+ssize_t	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putendl_fd(char *s, int fd);
+ssize_t	ft_putstr_fd(char *s, int fd);
 int		ft_toupper(char *c);
 int		ft_tolower(char *c);
 int		ft_atoi(const char *nptr);
