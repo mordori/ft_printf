@@ -1,6 +1,6 @@
 # ft_printf
 
-> Recreation of the `printf` function with the following data types as possible conversions: `c s p d i u x X %`.
+> Simplified recreation of the variadic <stdio.h> `printf` function with the following data types as possible conversions: `c s p d i u x X %`.
 
 > [!TIP]
 > ## How to use 🚨
