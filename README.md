@@ -2,7 +2,8 @@
 
 > Recreation of the `printf` function with the following data types as possible conversions: `c s p d i u x X %`.
 
-### 🚨 Usage
+> [!TIP]
+> ## How to use 🚨
 
 - Create the `libftprintf.a` library in your terminal with the command:
 ``` Makefile
@@ -16,3 +17,4 @@ make test
 ``` Makefile
 make fclean
 ```
+- Compile together with `libftprintf.a` to use it in your own program.
