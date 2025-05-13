@@ -2,6 +2,7 @@
 .vscode/
 external_tests/
 tester/
+printftester/
 a.out
 libft.a
 libftprintf.a
