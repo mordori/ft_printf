@@ -4,17 +4,16 @@
 
 > [!TIP]
 > ## How to use
-
-- Create the `libftprintf.a` library in your terminal with the command:
-``` Makefile
-make
-```
-- To compile and run the tests, use the following command:
-``` Makefile
-make test
-```
-- To delete all of the compiled files, use:
-``` Makefile
-make fclean
-```
-- Compile together with `libftprintf.a` to use it in your own program.
+> - Create the `libftprintf.a` library in your terminal with the command:
+> ``` Makefile
+> make
+> ```
+> - To compile and run the tests, use the following command:
+> ``` Makefile
+> make test
+> ```
+> - To delete all of the compiled files, use:
+> ``` Makefile
+> make fclean
+> ```
+> - Compile together with `libftprintf.a` to use it in your own program.
