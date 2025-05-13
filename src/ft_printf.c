@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/13 19:50:09 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 23:13:32 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	ft_printf(const char *s, ...)
 		if (*s++ == '%')
 			bytes = ft_strprint(*s++, &args);
 		else
-			bytes = ft_putchar_fd(*(s - 1), 1);
+			bytes = ft_putchar_fd(*(s - 1), STDOUT_FILENO);
 		if (bytes == -1)
 		{
 			totalbytes = -1;
