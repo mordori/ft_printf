@@ -2,18 +2,21 @@
 
 > Simplified recreation of the variadic <stdio.h> `printf` function with the following data types as possible conversions: `c s p d i u x X %`.
 
+> [!NOTE]
+> This project was developed and compiled using GCC on Ubuntu. It will likely work on other Linux distributions and with compatible C/C++ compilers, but GCC on Ubuntu is the environment it was originally built and tested in.
+
 > [!TIP]
 > ## How to use
-> - Create the `libftprintf.a` library in your terminal with the command:
-> ``` Makefile
-> make
-> ```
-> - To compile and run the tests, use the following command:
-> ``` Makefile
-> make test
-> ```
-> - To delete all of the compiled files, use:
-> ``` Makefile
-> make fclean
-> ```
-> - Compile together with `libftprintf.a` to use it in your own program.
+ - Create the `libftprintf.a` library in your terminal with the command:
+ ``` Makefile
+ make
+ ```
+ - To compile and run the tests, use the following command:
+ ``` Makefile
+ make test
+ ```
+ - To delete all of the compiled files, use:
+ ``` Makefile
+ make fclean
+ ```
+ - Compile together with `libftprintf.a` to use it in your own program.
