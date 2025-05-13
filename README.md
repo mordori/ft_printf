@@ -19,4 +19,3 @@
  ``` Makefile
  make fclean
  ```
- - Compile together with `libftprintf.a` to use it in your own program.
