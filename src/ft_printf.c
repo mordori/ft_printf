@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/13 00:11:49 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 19:50:09 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,18 +75,18 @@ static inline char	*ft_strformat(const char c, va_list *args)
  * @param args Variable type argument list.
  * @return Number of bytes written or -1 on error.
  */
-static inline int	ft_strprint(const char c, va_list *args)
+static inline ssize_t	ft_strprint(const char c, va_list *args)
 {
-	int		bytes;
 	char	*str;
+	ssize_t	bytes;
 
 	str = ft_strformat(c, args);
 	if (!str)
 		return (-1);
 	if (c == 'c')
-		bytes = ft_putchar_fd(*str, 1);
+		bytes = ft_putchar_fd(*str, STDOUT_FILENO);
 	else
-		bytes = ft_putstr_fd(str, 1);
+		bytes = ft_putstr_fd(str, STDOUT_FILENO);
 	free(str);
 	return (bytes);
 }
@@ -105,8 +105,8 @@ static inline int	ft_strprint(const char c, va_list *args)
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
-	int		totalbytes;
-	int		bytes;
+	ssize_t	totalbytes;
+	ssize_t	bytes;
 
 	if (!s)
 		return (-1);
@@ -126,5 +126,5 @@ int	ft_printf(const char *s, ...)
 		totalbytes += bytes;
 	}
 	va_end(args);
-	return (totalbytes);
+	return ((int)totalbytes);
 }

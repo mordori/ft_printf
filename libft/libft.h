@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 11:44:40 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/12 18:02:05 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 19:37:12 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>	// malloc(), free(), NULL, size_t
 # include <limits.h>	// INT_MAX, INT_MIN
 # include <stdint.h>	// SIZE_MAX
-# include <unistd.h>	// write()
+# include <unistd.h>	// write(), ssize_t, STDOUT_FILENO
 
 typedef struct s_list
 {

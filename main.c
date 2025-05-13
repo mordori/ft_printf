@@ -6,11 +6,14 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/13 17:20:48 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/13 19:38:58 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include "ft_printf.h"
 
 int	main(void)
@@ -33,7 +36,7 @@ int	main(void)
 	ft_printf("\t\tReturns: %d\n\n", ft_printf("%s", str3));
 
 	// p
-	char *ptr1 = ft_calloc(1, sizeof (char *));
+	char *ptr1 = calloc(1, sizeof (char *));
 	printf("\033[33mp\033[0m\n");
 	printf("\t\tReturns: %d\n", printf("%p", (void *)-ULONG_MAX));
 	ft_printf("\t\tReturns: %d\n", ft_printf("%p", (void *)-ULONG_MAX));
@@ -77,7 +80,7 @@ int	main(void)
 	ft_printf("\t\tReturns: %d\n\n", ft_printf("%%"));
 
 	// all
-	char *ptr2 = ft_calloc(1, sizeof (char *));
+	char *ptr2 = calloc(1, sizeof (char *));
 	printf("\033[33mc s p d i u x X %% (all)\033[0m\n");
 	printf("\tReturns: %d\n", printf("%c %s %p %d %i %u %x %X %%", '$', "Hello", ptr2, 3, 7, 12, 15, 15));
 	ft_printf("\tReturns: %d\n\n", ft_printf("%c %s %p %d %i %u %x %X %%", '$', "Hello", ptr2, 3, 7, 12, 15, 15));
@@ -87,6 +90,8 @@ int	main(void)
 	ft_printf("\tReturns: %d\n\n", ft_printf("%ld", (long)1000));
 
 	// null
+	printf("\033[33mnull\033[0m\t");
+	printf("\tReturns: %d\n", printf(NULL));
 	ft_printf("\033[33mnull\033[0m\t");
 	ft_printf("\tReturns: %d\n\n", ft_printf(NULL));
 
