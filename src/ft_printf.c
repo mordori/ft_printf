@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 16:58:22 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/13 23:13:32 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/14 17:10:10 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ static inline ssize_t	ft_strprint(const char c, va_list *args)
 	char	*str;
 	ssize_t	bytes;
 
+	if (!args)
+		return (-1);
 	str = ft_strformat(c, args);
 	if (!str)
 		return (-1);

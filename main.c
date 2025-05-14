@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/13 19:38:58 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:55:46 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ int	main(void)
 	ft_printf("\tReturns: %d\n\n", ft_printf("%ld", (long)1000));
 
 	// null
-	printf("\033[33mnull\033[0m\t");
-	printf("\tReturns: %d\n", printf(NULL));
+	// printf("\033[33mnull\033[0m\t");
+	// printf("\tReturns: %d\n", printf(NULL));
 	ft_printf("\033[33mnull\033[0m\t");
 	ft_printf("\tReturns: %d\n\n", ft_printf(NULL));
 
