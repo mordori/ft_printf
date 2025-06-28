@@ -1,6 +1,6 @@
 # ft_printf
 
-> Simplified recreation of the variadic <stdio.h> `printf` function with the following data types as supported conversions: `c s p d i u x X %`.
+> Simplified recreation of the variadic `printf` function with the following data types as supported conversions: `c s p d i u x X %`.
 
 > [!NOTE]
 > This project was developed and compiled using clang on Ubuntu. It will likely work on other Linux distributions and with compatible C/C++ compilers, but clang on Ubuntu is the environment it was originally built and tested in.
