@@ -6,7 +6,7 @@
 /*   By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 21:34:33 by myli-pen          #+#    #+#             */
-/*   Updated: 2025/05/14 16:55:46 by myli-pen         ###   ########.fr       */
+/*   Updated: 2025/06/28 22:35:02 by myli-pen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include "ft_printf.h"
+#include "src/ft_printf.h"
 
 int	main(void)
 {

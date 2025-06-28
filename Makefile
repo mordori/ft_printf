@@ -6,7 +6,7 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/05/13 16:37:30 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/06/28 23:07:42 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,33 +18,35 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 MAKEFLAGS += --no-print-directory
 DIR_LIB = libft
-DIR_INC = .
 DIR_SRC = src
 DIR_OBJ = obj
+DIR_DEP = dep
 
-SRCS = $(addprefix $(DIR_SRC)/, ft_printf.c ft_printf_utils.c)
+SRCS = $(addprefix $(DIR_SRC)/, \
+		ft_printf.c ft_printf_utils.c)
 OBJS = $(patsubst $(DIR_SRC)/%.c, $(DIR_OBJ)/%.o, $(SRCS))
+DEPS = $(patsubst $(DIR_SRC)/%.c, $(DIR_DEP)/%.d, $(SRCS))
 
 all: $(LIB) $(NAME)
 
 $(LIB):
 	@make -C $(DIR_LIB)
+	@mkdir -p $(DIR_OBJ) $(DIR_DEP)
 
-$(DIR_OBJ):
-	@mkdir -p $(DIR_OBJ)
-
-$(NAME): $(LIB) $(DIR_OBJ) $(OBJS)
+$(NAME): $(LIB) $(OBJS)
 	@cp $(LIB) $(NAME)
 	@ar -rcs $(NAME) $(OBJS)
 	@echo "\033[1;33m [✔] $(NAME) created \033[0m"
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.c
-	@$(CC) $(CFLAGS) -I$(DIR_INC) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ \
+	-MMD -MP -MF $(patsubst $(DIR_OBJ)/%.o, $(DIR_DEP)/%.d, $@)
 	@echo "\033[1;32m [+]\033[0m compiling $@"
 
 clean:
-	@rm -rf $(DIR_OBJ)
-	@echo "\033[1;31m [-]\033[0m removed ft_printf .o files"
+	@rm -rf $(DIR_OBJ) $(DIR_DEP)
+	@echo "\033[1;31m [-]\033[0m removed ./obj/"
+	@echo "\033[1;31m [-]\033[0m removed ./dep/"
 
 fclean: clean
 	@rm -rf $(NAME)
@@ -60,5 +62,7 @@ test: $(NAME)
 	--track-origins=yes ./a.out
 	@rm -rf a.out
 
-.SECONDARY: $(OBJS)
 .PHONY: all clean fclean re test
+.SECONDARY: $(OBJS) $(DEPS)
+
+-include $(DEPS)

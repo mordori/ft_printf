@@ -1,10 +1,9 @@
 #.gitignore
 .vscode/
-external_tests/
-tester/
-printftester/
+dep/
+obj/
+*.o
+*.d
 a.out
 libft.a
 libftprintf.a
-*.o
-obj/
