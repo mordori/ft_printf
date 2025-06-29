@@ -5,7 +5,7 @@
 > `%c (char)`
 > `%s (char *)`
 > `%p (void *)`
-> `%d %i (int) `
+> `%d %i (int)`
 > 
 > `%u (unsigned int)`
 > `%x %X (unsigned int to Hex)`
