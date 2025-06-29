@@ -6,14 +6,14 @@
 #    By: myli-pen <myli-pen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/02 20:18:54 by myli-pen          #+#    #+#              #
-#    Updated: 2025/06/28 23:07:42 by myli-pen         ###   ########.fr        #
+#    Updated: 2025/06/29 09:05:46 by myli-pen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .DEFAULT_GOAL = all
 NAME = libftprintf.a
 LIB = libft.a
-TEST = main.c
+PROGRAM = program
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 MAKEFLAGS += --no-print-directory
@@ -49,18 +49,18 @@ clean:
 	@echo "\033[1;31m [-]\033[0m removed ./dep/"
 
 fclean: clean
+	@rm -rf $(PROGRAM)
 	@rm -rf $(NAME)
+	@echo "\033[1;31m [-]\033[0m removed $(PROGRAM)"
 	@echo "\033[1;31m [-]\033[0m removed $(NAME)"
 	@make fclean -C $(DIR_LIB)
 
 re: fclean all
 
 test: $(NAME)
-	@$(CC) -g $(CFLAGS) $(TEST) $(NAME)
-	@echo ""
-	@valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes \
-	--track-origins=yes ./a.out
-	@rm -rf a.out
+	@$(CC) -g $(CFLAGS) -o $(PROGRAM) main.c $(NAME)
+	@echo "\033[1;33m [✔] $(PROGRAM) created \033[0m\n"
+	./$(PROGRAM)
 
 .PHONY: all clean fclean re test
 .SECONDARY: $(OBJS) $(DEPS)
