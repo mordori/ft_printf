@@ -1,30 +1,36 @@
 # ft_printf
+## ✨ Features
+Simplified recreation of the variadic `printf` function. 
 
-> Simplified recreation of the variadic `printf` function with the following data types as supported conversions:
-> 
-> `%c (char)`
-> `%s (char *)`
-> `%p (void *)`
-> `%d %i (int)`
-> 
-> `%u (unsigned int)`
-> `%x %X (unsigned int to Hex)`
-> `%% ('%')`
+Following data types are supported as conversions:
 
-> [!NOTE]
-> This project was developed and tested using clang on Ubuntu. It will likely work on other Linux distributions and with compatible C/C++ compilers.
+| Conversion			    	| Data type													|
+|-------------------|-----------------------|
+| `%c`             	| char |
+| `%s`           	  | char * |
+| `%p`             	| void * |
+| `%d`             	| int |
+| `%i`             	| int |
+| `%u`             	| unsigned int |
+| `%x`             	| unsigned int to lower-case Hex |
+| `%X`             	| unsigned int to upper-case Hex |
+| `%%`             	| '%' character|
 
 > [!TIP]
-> ## How to use
- - Create the `libftprintf.a` library in your terminal with the command:
- ``` Makefile
- make
- ```
- - To compile and run the tests, use the following command:
- ``` Makefile
- make test
- ```
- - To delete all of the compiled files, use:
- ``` Makefile
- make fclean
- ```
+> ## 🚀 How to use
+Run the following commands to clone the repository and create `libftprintf.a` library
+``` git
+git clone https://github.com/mordori/ft_printf.git ft_printf
+cd ft_printf
+make
+```
+
+To compile and run the tests, use the following command:
+``` Makefile
+make test
+```
+
+To delete all of the compiled files, use
+``` Makefile
+make fclean
+```
