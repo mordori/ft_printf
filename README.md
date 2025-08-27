@@ -1,6 +1,6 @@
 # ft_printf
 ## ✨ Features
-Simplified recreation of the variadic `printf` function. 
+**Simplified recreation of the variadic `printf` function.**
 
 Following data types are supported as conversions:
 
